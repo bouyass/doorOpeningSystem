@@ -103,7 +103,8 @@ async def consume_signaling():
 
             elif data["type"] == "answer":
                 print("🔁 Processing received answer", data)
-                answer = RTCSessionDescription(sdp=data["sdp"]["sdp"], type="answer")
+
+                answer = RTCSessionDescription(sdp=data["sdp"], type="answer")
                 await pc.setRemoteDescription(answer)
                 print("🔁 Received answer and set remote description")
 
